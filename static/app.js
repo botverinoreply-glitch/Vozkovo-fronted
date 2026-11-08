@@ -571,6 +571,7 @@ function setBusy(busy) {
 function updateSpeedLabel() {
   const speed = Number(speedRange.value);
   speedValue.textContent = speed === 0 ? `${t('normal')} · 0%` : `${speed > 0 ? '+' : ''}${speed}%`;
+  if (audioPlayer) audioPlayer.playbackRate = 1 + speed / 100;
 }
 
 async function startGeneration() {
@@ -597,7 +598,7 @@ async function startGeneration() {
     const response = await fetch(apiUrl('/api/generate'), {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({text, voice: voiceSelect.value, rate: Number(speedRange.value)})
+      body: JSON.stringify({text, voice: voiceSelect.value})
     });
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.detail || t('startFailed'));
@@ -643,6 +644,7 @@ async function pollJob(jobId) {
 async function showResult(jobId) {
   const url = apiUrl(`/api/jobs/${encodeURIComponent(jobId)}/download`);
   audioPlayer.src = url;
+  audioPlayer.playbackRate = 1 + Number(speedRange.value) / 100;
   downloadBtn.href = url;
   downloadBtn.download = `voz-kovo-${new Date().toISOString().slice(0, 10)}.mp3`;
   resultPanel.classList.remove('hidden');
