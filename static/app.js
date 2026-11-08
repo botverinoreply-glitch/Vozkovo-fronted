@@ -34,7 +34,7 @@ const translations = {
   es: {
     pageTitle: 'VozKovo — Texto a voz', brandHome: 'VozKovo inicio', generatorLabel: 'Generador de voz', pageDescription: 'Convierte texto en voz y descarga tu audio en MP3.',
     languageLabel: 'Idioma de la web', status: 'Texto a voz', eyebrow: 'CONVIERTE TUS PALABRAS EN AUDIO', heroTitle: 'Tu texto.', heroAccent: 'Una voz natural.',
-    heroCopy: 'Escribe, elige entre cientos de voces y descarga el resultado en MP3. Sin claves API.',
+    heroCopy: 'Escribe, elige una voz y descarga el resultado en MP3.',
     textStep: '01 / TEXTO', textHeading: '¿Qué quieres que diga?', clearText: 'Limpiar texto', placeholder: 'Escribe o pega aquí tu texto...\n\nPuedes añadir párrafos largos. El texto se procesa automáticamente por fragmentos.',
     characters: 'caracteres', character: 'carácter', noLimit: 'Sin límite fijo en la app', voiceStep: '02 / VOZ', voiceHeading: 'Elige cómo debe sonar', loadingVoices: 'Cargando voces…',
     searchVoice: 'BUSCAR VOZ', searchPlaceholder: 'Buscar por nombre o idioma…', voiceLanguage: 'IDIOMA', allLanguages: 'Todos los idiomas', spanish: 'Español', voiceLabel: 'VOZ',
@@ -52,7 +52,7 @@ const translations = {
   en: {
     pageTitle: 'VozKovo — Text to speech', brandHome: 'VozKovo home', generatorLabel: 'Text to speech generator', pageDescription: 'Turn text into speech and download your audio as an MP3.',
     languageLabel: 'Website language', status: 'Text to speech', eyebrow: 'TURN YOUR WORDS INTO AUDIO', heroTitle: 'Your text.', heroAccent: 'A natural voice.',
-    heroCopy: 'Write, choose from hundreds of voices and download the result as an MP3. No API keys needed.',
+    heroCopy: 'Write, choose a voice and download the result as an MP3.',
     textStep: '01 / TEXT', textHeading: 'What would you like it to say?', clearText: 'Clear text', placeholder: 'Type or paste your text here...\n\nLong paragraphs are welcome. Text is processed automatically in chunks.',
     characters: 'characters', character: 'character', noLimit: 'No fixed app limit', voiceStep: '02 / VOICE', voiceHeading: 'Choose how it should sound', loadingVoices: 'Loading voices…',
     searchVoice: 'SEARCH VOICE', searchPlaceholder: 'Search by name or language…', voiceLanguage: 'LANGUAGE', allLanguages: 'All languages', spanish: 'Spanish', voiceLabel: 'VOICE',
@@ -70,7 +70,7 @@ const translations = {
   fr: {
     pageTitle: 'VozKovo — Synthèse vocale', brandHome: 'Accueil VozKovo', generatorLabel: 'Générateur vocal', pageDescription: 'Convertissez du texte en voix et téléchargez votre audio au format MP3.',
     languageLabel: 'Langue du site', status: 'Synthèse vocale', eyebrow: 'TRANSFORMEZ VOS MOTS EN AUDIO', heroTitle: 'Votre texte.', heroAccent: 'Une voix naturelle.',
-    heroCopy: 'Écrivez, choisissez parmi des centaines de voix et téléchargez le résultat en MP3. Aucune clé API requise.',
+    heroCopy: 'Écrivez, choisissez une voix et téléchargez le résultat en MP3.',
     textStep: '01 / TEXTE', textHeading: 'Que voulez-vous faire dire ?', clearText: 'Effacer le texte', placeholder: 'Saisissez ou collez votre texte ici...\n\nVous pouvez ajouter de longs paragraphes. Le texte est traité automatiquement par segments.',
     characters: 'caractères', character: 'caractère', noLimit: 'Pas de limite fixe dans l’application', voiceStep: '02 / VOIX', voiceHeading: 'Choisissez le rendu vocal', loadingVoices: 'Chargement des voix…',
     searchVoice: 'RECHERCHER UNE VOIX', searchPlaceholder: 'Rechercher par nom ou langue…', voiceLanguage: 'LANGUE', allLanguages: 'Toutes les langues', spanish: 'Espagnol', voiceLabel: 'VOIX',
@@ -88,7 +88,7 @@ const translations = {
   de: {
     pageTitle: 'VozKovo — Text zu Sprache', brandHome: 'VozKovo Startseite', generatorLabel: 'Sprachgenerator', pageDescription: 'Wandle Text in Sprache um und lade dein Audio als MP3 herunter.',
     languageLabel: 'Sprache der Website', status: 'Text zu Sprache', eyebrow: 'VERWANDELE DEINE WORTE IN AUDIO', heroTitle: 'Dein Text.', heroAccent: 'Eine natürliche Stimme.',
-    heroCopy: 'Schreibe, wähle aus Hunderten von Stimmen und lade das Ergebnis als MP3 herunter. Keine API-Schlüssel nötig.',
+    heroCopy: 'Schreibe, wähle eine Stimme und lade das Ergebnis als MP3 herunter.',
     textStep: '01 / TEXT', textHeading: 'Was soll gesprochen werden?', clearText: 'Text löschen', placeholder: 'Schreibe oder füge deinen Text hier ein...\n\nAuch lange Absätze sind möglich. Der Text wird automatisch in Abschnitten verarbeitet.',
     characters: 'Zeichen', character: 'Zeichen', noLimit: 'Kein festes App-Limit', voiceStep: '02 / STIMME', voiceHeading: 'Wähle den Klang', loadingVoices: 'Stimmen werden geladen…',
     searchVoice: 'STIMME SUCHEN', searchPlaceholder: 'Nach Name oder Sprache suchen…', voiceLanguage: 'SPRACHE', allLanguages: 'Alle Sprachen', spanish: 'Spanisch', voiceLabel: 'STIMME',
@@ -106,7 +106,7 @@ const translations = {
   it: {
     pageTitle: 'VozKovo — Da testo a voce', brandHome: 'Home VozKovo', generatorLabel: 'Generatore vocale', pageDescription: 'Converti il testo in voce e scarica l’audio in formato MP3.',
     languageLabel: 'Lingua del sito', status: 'Da testo a voce', eyebrow: 'TRASFORMA LE TUE PAROLE IN AUDIO', heroTitle: 'Il tuo testo.', heroAccent: 'Una voce naturale.',
-    heroCopy: 'Scrivi, scegli tra centinaia di voci e scarica il risultato in MP3. Non servono chiavi API.',
+    heroCopy: 'Scrivi, scegli una voce e scarica il risultato in MP3.',
     textStep: '01 / TESTO', textHeading: 'Che cosa vuoi far dire?', clearText: 'Cancella testo', placeholder: 'Scrivi o incolla qui il testo...\n\nPuoi inserire anche paragrafi lunghi. Il testo viene elaborato automaticamente a blocchi.',
     characters: 'caratteri', character: 'carattere', noLimit: 'Nessun limite fisso nell’app', voiceStep: '02 / VOCE', voiceHeading: 'Scegli come deve suonare', loadingVoices: 'Caricamento voci…',
     searchVoice: 'CERCA VOCE', searchPlaceholder: 'Cerca per nome o lingua…', voiceLanguage: 'LINGUA', allLanguages: 'Tutte le lingue', spanish: 'Spagnolo', voiceLabel: 'VOCE',
@@ -142,7 +142,7 @@ const translations = {
   nl: {
     pageTitle: 'VozKovo — Tekst naar spraak', brandHome: 'VozKovo home', generatorLabel: 'Spraakgenerator', pageDescription: 'Zet tekst om in spraak en download je audio als MP3.',
     languageLabel: 'Websitet taal', status: 'Tekst naar spraak', eyebrow: 'MAAK AUDIO VAN JE WOORDEN', heroTitle: 'Jouw tekst.', heroAccent: 'Een natuurlijke stem.',
-    heroCopy: 'Schrijf, kies uit honderden stemmen en download het resultaat als MP3. Geen API-sleutels nodig.',
+    heroCopy: 'Schrijf, kies een stem en download het resultaat als MP3.',
     textStep: '01 / TEKST', textHeading: 'Wat moet er worden uitgesproken?', clearText: 'Tekst wissen', placeholder: 'Typ of plak hier je tekst...\n\nLange alinea’s zijn welkom. De tekst wordt automatisch in delen verwerkt.',
     characters: 'tekens', character: 'teken', noLimit: 'Geen vaste app-limiet', voiceStep: '02 / STEM', voiceHeading: 'Kies hoe het moet klinken', loadingVoices: 'Stemmen laden…',
     searchVoice: 'STEM ZOEKEN', searchPlaceholder: 'Zoek op naam of taal…', voiceLanguage: 'TAAL', allLanguages: 'Alle talen', spanish: 'Spaans', voiceLabel: 'STEM',
