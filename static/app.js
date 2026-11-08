@@ -27,6 +27,8 @@ const libraryStatus = document.getElementById('libraryStatus');
 const voiceCacheKey = 'vozkovo-voices-cache-v1';
 const selectedVoiceKey = 'vozkovo-selected-voice';
 const libraryObjectUrls = new Set();
+const API_BASE_URL = String(window.VOZKOVO_CONFIG?.API_BASE_URL || '').replace(/\\/+$/, '');
+const apiUrl = path => `${API_BASE_URL}${path}`;
 
 const translations = {
   es: {
@@ -236,7 +238,7 @@ function applyTranslations() {
   textInput.placeholder = tr.placeholder;
   voiceSearch.placeholder = tr.searchPlaceholder;
   languageFilter.options[0].textContent = tr.allLanguages;
-  languageFilter.options[1].textContent = tr.spanish;
+  if (allVoices.length) populateLanguageFilter();
   document.getElementById('speedRange').setAttribute('aria-label', tr.speedHeading);
   updateCount();
   updateSpeedLabel();
@@ -291,6 +293,16 @@ function displayVoiceName(voice) {
   const match = localizedName.match(/\(([^,]+),\s*([^)]+)\)/);
   const person = match ? match[2].replace(/Neural$/i, '') : voice.id.split('-').slice(-1)[0].replace(/Neural$/i, '');
   return `${person} · ${regionName(locale)}${gender ? ` · ${gender}` : ''}`;
+}
+
+function populateLanguageFilter() {
+  const previous = languageFilter.value || 'all';
+  const locales = [...new Set(allVoices.map(voice => (voice.locale || '').split('-')[0].toLowerCase()).filter(Boolean))];
+  const displayNames = new Intl.DisplayNames([currentLanguage], {type: 'language'});
+  languageFilter.replaceChildren(new Option(t('allLanguages'), 'all'));
+  locales.sort((a, b) => displayNames.of(a).localeCompare(displayNames.of(b), currentLanguage));
+  locales.forEach(code => languageFilter.add(new Option(displayNames.of(code) || code, code)));
+  languageFilter.value = locales.includes(previous) ? previous : 'all';
 }
 
 function renderVoices() {
@@ -491,10 +503,11 @@ async function loadVoices() {
     voiceCount.textContent = t('loadingVoices');
   }
   try {
-    const response = await fetch('/api/voices');
+    const response = await fetch(apiUrl('/api/voices'));
     if (!response.ok) throw new Error(t('voiceLoadFailed'));
     const data = await response.json();
     allVoices = data.voices || [];
+    populateLanguageFilter();
     if (!allVoices.length) throw new Error(t('emptyCatalog'));
     cacheVoiceCatalogue(data);
     renderVoices();
@@ -581,7 +594,7 @@ async function startGeneration() {
   progressDetail.textContent = t('sending');
 
   try {
-    const response = await fetch('/api/generate', {
+    const response = await fetch(apiUrl('/api/generate'), {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({text, voice: voiceSelect.value, rate: Number(speedRange.value)})
@@ -598,7 +611,7 @@ async function startGeneration() {
 
 async function pollJob(jobId) {
   try {
-    const response = await fetch(`/api/jobs/${jobId}`);
+    const response = await fetch(apiUrl(`/api/jobs/${encodeURIComponent(jobId)}`));
     const data = await response.json().catch(() => ({}));
     if (!response.ok) throw new Error(data.detail || t('progressFailed'));
 
@@ -628,7 +641,7 @@ async function pollJob(jobId) {
 }
 
 async function showResult(jobId) {
-  const url = `/api/jobs/${jobId}/download`;
+  const url = apiUrl(`/api/jobs/${encodeURIComponent(jobId)}/download`);
   audioPlayer.src = url;
   downloadBtn.href = url;
   downloadBtn.download = `voz-kovo-${new Date().toISOString().slice(0, 10)}.mp3`;
