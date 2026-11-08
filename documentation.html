@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fa">
+  <meta name="description" content="VozKovo documentation: voices, long text, audio storage and pause markers.">
+  <title>VozKovo — Documentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+  <div class="page-shell documentation-shell">
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="VozKovo home"><img class="brand-logo" src="./logos/vozkovo-logo.png" alt="VozKovo"></a>
+      <a class="docs-home-link" href="./">Back to generator ↗</a>
+    </header>
+
+    <main class="documentation">
+      <div class="eyebrow"><span class="eyebrow-line"></span>HELP &amp; REFERENCE</div>
+      <h1>VozKovo <span>Documentation.</span></h1>
+      <p class="docs-intro">Everything you need to know about generating speech, choosing voices, adding pauses and keeping your audio files.</p>
+
+      <section class="docs-section" id="getting-started">
+        <span class="step-label">01 / GETTING STARTED</span>
+        <h2>Turn text into speech</h2>
+        <ol>
+          <li>Enter or paste your text in the editor.</li>
+          <li>Search the voice catalogue and select the voice you want to use.</li>
+          <li>Adjust the reading speed, then select <strong>Generate voice</strong>.</li>
+          <li>Listen to the result and download the MP3 file.</li>
+        </ol>
+        <p>VozKovo retrieves the available voices from its speech provider. You do not need to add an API key in the app.</p>
+      </section>
+
+      <section class="docs-section" id="long-text">
+        <span class="step-label">02 / LONG TEXT</span>
+        <h2>No fixed 5,000-character app cap</h2>
+        <p>VozKovo does not impose a fixed 5,000-character limit or a fixed monthly character allowance in the application. Long text is automatically split into smaller sections, generated one after another and combined into a single MP3.</p>
+        <p><strong>Important:</strong> this does not mean literally infinite generation. The speech provider, server resources, processing time, network connection and hosting plan can still impose practical limits or temporary availability restrictions.</p>
+      </section>
+
+      <section class="docs-section" id="pause-markers">
+        <span class="step-label">03 / PAUSE MARKERS</span>
+        <h2>Control pauses inside your text</h2>
+        <p>Type a marker on its own or between sentences. VozKovo removes the marker from the spoken text and inserts actual silence in the audio. The markers work regardless of the selected website language or voice language.</p>
+        <div class="code-examples">
+          <code>[silence]</code><span>Inserts a one-second pause.</span>
+          <code>[silencio]</code><span>Also inserts a one-second pause.</span>
+          <code>[pause 1s]</code><span>Inserts a one-second pause.</span>
+          <code>[pausa 2s]</code><span>Inserts a two-second pause.</span>
+          <code>[break 500ms]</code><span>Inserts a half-second pause.</span>
+        </div>
+        <p>Supported units include milliseconds (<code>ms</code>) and seconds (<code>s</code>, <code>sec</code>, <code>seconds</code>, <code>seg</code> and <code>segundos</code>). A pause without a duration defaults to one second. Each marker is capped at ten seconds.</p>
+      </section>
+
+      <section class="docs-section" id="browser-library">
+        <span class="step-label">04 / YOUR BROWSER LIBRARY</span>
+        <h2>Your generated MP3 files stay on your device</h2>
+        <p>After generation, VozKovo automatically saves a copy of the MP3 in this browser's local database. You can play, download or delete saved files from the <strong>Saved audio in this browser</strong> section.</p>
+        <p>The voice catalogue and your last selected voice are also cached in the browser to make returning to the app quicker. Browser storage is device- and browser-specific; clearing site data or using another browser/device may remove or hide these files.</p>
+        <p>The server keeps a temporary copy while the job is being prepared. The browser library is a separate local copy and does not sync between devices.</p>
+      </section>
+
+      <section class="docs-section" id="languages">
+        <span class="step-label">05 / LANGUAGES &amp; VOICES</span>
+        <h2>Website language is independent from speech language</h2>
+        <p>The interface can follow your browser language or be changed manually. Choosing English for the website does not force the generated speech to use an English voice. Select the voice that matches the language you want to hear.</p>
+      </section>
+
+      <section class="docs-section docs-note">
+        <h2>Service availability</h2>
+        <p>VozKovo uses the online Edge TTS speech service through the <code>edge-tts</code> package. Internet access is required on the server. Voice availability and generation speed may change when the external service or hosting environment changes.</p>
+      </section>
+
+      <div class="docs-bottom"><a href="./">← Back to VozKovo</a><span>VOZKOVO · MADE TO GIVE YOUR IDEAS A VOICE</span></div>
+    </main>
+  </div>
+</body>
+</html>
