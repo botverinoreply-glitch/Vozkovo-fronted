@@ -124,7 +124,7 @@ const translations = {
   pt: {
     pageTitle: 'VozKovo — Texto para voz', brandHome: 'Início do VozKovo', generatorLabel: 'Gerador de voz', pageDescription: 'Converta texto em voz e transfira o áudio em MP3.',
     languageLabel: 'Idioma do site', status: 'Texto para voz', eyebrow: 'TRANSFORME AS SUAS PALAVRAS EM ÁUDIO', heroTitle: 'O seu texto.', heroAccent: 'Uma voz natural.',
-    heroCopy: 'Escreva, escolha entre centenas de vozes e transfira o resultado em MP3. Não precisa de chaves API.',
+    heroCopy: 'Escreva, escolha uma voz e transfira o resultado em MP3.',
     textStep: '01 / TEXTO', textHeading: 'O que pretende que seja dito?', clearText: 'Limpar texto', placeholder: 'Escreva ou cole o seu texto aqui...\n\nPode adicionar parágrafos longos. O texto é processado automaticamente por partes.',
     characters: 'caracteres', character: 'carácter', noLimit: 'Até 10.000 caracteres por geração', voiceStep: '02 / VOZ', voiceHeading: 'Escolha como deve soar', loadingVoices: 'A carregar vozes…',
     searchVoice: 'PESQUISAR VOZ', searchPlaceholder: 'Pesquisar por nome ou idioma…', voiceLanguage: 'IDIOMA', allLanguages: 'Todos os idiomas', spanish: 'Espanhol', voiceLabel: 'VOZ',
